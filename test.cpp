@@ -9,9 +9,5 @@ int main()
     cout << "Hello Manish" << endl;
     cout << "Hello Manish" << endl;
     cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
     return 0;
 }
