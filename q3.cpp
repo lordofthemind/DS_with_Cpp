@@ -1,18 +1,9 @@
 #include <iostream>
-using namespace std;
+#include "functionsExample.h"
 
-int main() {
-    int arr[10];
-    for (int i = 0; i <= 9; i++)
-    {
-        cout << "Enter Element " << i << ":";
-        cin >> arr[i];
-    }
-    cout << "Element in array are: ";
-    for (int i = 0; i <= 9; i++)
-    {
-        cout << arr[i];
-    }
-    cout << endl;
-    return 0;
+int main()
+{
+    cout << "HII from 1st file";
+    example(3, 4);
+    grt();
 }
