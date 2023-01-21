@@ -1,3 +1,4 @@
+// count a total number of duplicate elements in an array
 #include <iostream>
 using namespace std;
 
@@ -27,7 +28,7 @@ int main() {
             }            
         }
     }
-    cout << "Total number of Duplicate" << count;
+    cout << "Total number of Duplicate :" << count;
     cout << endl;
     return 0;
 }

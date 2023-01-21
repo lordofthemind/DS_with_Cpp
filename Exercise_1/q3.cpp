@@ -1,3 +1,4 @@
+// find the sum of all elements of the array
 #include <iostream>
 using namespace std;
 

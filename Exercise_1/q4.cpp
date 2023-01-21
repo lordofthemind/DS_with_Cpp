@@ -1,3 +1,4 @@
+//copy the elements of one array into another array
 #include <iostream>
 using namespace std;
 

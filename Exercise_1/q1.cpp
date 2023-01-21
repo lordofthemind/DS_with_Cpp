@@ -1,7 +1,9 @@
+//  store elements in an array and print it
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     int arr[10];
     for (int i = 0; i <= 9; i++)
     {

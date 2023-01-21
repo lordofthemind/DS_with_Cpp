@@ -1,3 +1,4 @@
+// find the sum of left diagonals of a matrix
 #include <iostream>
 using namespace std;
 
@@ -34,7 +35,7 @@ int main()
     {
         for (j = 0; j < n; j++)
         {
-            if ((i + j) == (n - 1))
+            if (i == j)
             {
                 cout << arr[i][j];
                 rightDgSum += arr[i][j];
