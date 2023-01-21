@@ -23,13 +23,24 @@ int main()
         cout << arr[i] << " ";
     }
     cout << endl;
-    sortDescending(arr, n);
+    insertElement(arr, n);
     cout << endl;
     return 0;
 }
 
 void insertElement(int arr[], int n){
-    
+    sortAscending(arr, n);
+    int el;
+    cout << "Enter element to insert: " << endl;
+    cin >>el;
+    int narr[n+1];
+    narr[0] = el;
+    for (int i = 0; i < n; i++)
+    {
+        narr[i +1 ] = arr[i];
+    }
+    n++;
+    sortAscending(narr, n);
 }
 
 void sortAscending(int arr[], int n){
@@ -51,4 +62,5 @@ void sortAscending(int arr[], int n){
     {
         cout << arr[i] << " ";
     }
+    
 }
