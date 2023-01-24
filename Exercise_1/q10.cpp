@@ -14,10 +14,7 @@ void oddEven(int arr[], int n){
             oSize++;
         }
     }
-
-    // cout << eSize<<endl;
-    // cout << oSize<<endl;
-
+    
     int arrEven[eSize], arrOdd[oSize];
     
     for (i = 0; i <= n - 1; i++)
@@ -63,6 +60,5 @@ int main()
     }
     cout << endl;
     oddEven(arr, n);
-    cout << endl;
     return 0;
 }

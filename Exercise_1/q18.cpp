@@ -1,3 +1,4 @@
+//2D array of size 3x3 and print the matrix
 #include <iostream>
 using namespace std;
 

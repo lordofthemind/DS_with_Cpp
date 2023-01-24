@@ -62,5 +62,5 @@ void sortAscending(int arr[], int n){
     {
         cout << arr[i] << " ";
     }
-    
+    cout << endl;
 }

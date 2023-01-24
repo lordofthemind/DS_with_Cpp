@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int n, i, j, rightDgSum = 0;
+    int n, i, j, leftDgSum = 0;
     cout << "Input the size of the square matrix (less than 5): ";
     cin >> n;
     if (n >= 5)
@@ -38,11 +38,11 @@ int main()
             if (i == j)
             {
                 cout << arr[i][j];
-                rightDgSum += arr[i][j];
+                leftDgSum += arr[i][j];
             }
         }
         cout << endl;
     }
-    cout << "The sum of right diagonal of matrix is: " << rightDgSum << endl;
+    cout << "The sum of left diagonal of matrix is: " << leftDgSum << endl;
     return 0;
 }

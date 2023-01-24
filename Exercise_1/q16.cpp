@@ -1,3 +1,4 @@
+// find the second largest element in an array
 #include <iostream>
 using namespace std;
 
@@ -12,12 +13,10 @@ void scndLargestElement(int arr[], int n){
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
-        }
-        
+        }        
     }
     cout << "Second largest element in array : ";
-    cout << arr[n-2] << " "<< endl;
-    
+    cout << arr[n-2] << " "<< endl;    
 }
 
 int main()

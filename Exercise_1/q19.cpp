@@ -1,3 +1,4 @@
+//addition of two Matrices of same size
 #include <iostream>
 using namespace std;
 

@@ -1,3 +1,4 @@
+// find sum of right diagonals of a matrix
 #include <iostream>
 using namespace std;
 

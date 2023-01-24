@@ -1,4 +1,4 @@
-// sort elements of the array in descending order.
+// delete an element at desired position from an array
 
 #include <iostream>
 using namespace std;
