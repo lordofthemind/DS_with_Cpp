@@ -7,12 +7,12 @@ int main() {
     cout << "Enter length of array: ";
     cin >> n;
     int arr[n];
-    for (int i = 0; i <= n-1; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << "Enter Element " << i << ":";
         cin >> arr[i];
     }
-    for (int i = 0; i <= n-1; i++)
+    for (int i = 0; i < n; i++)
     {
         sum += arr[i];
     }

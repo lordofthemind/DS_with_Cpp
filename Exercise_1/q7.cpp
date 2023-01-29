@@ -3,9 +3,9 @@
 using namespace std;
 
 void sortDescending(int arr[], int n){
-    for (int i = 0; i <= n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j <= n - 1; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if(arr[i] < arr[j])
             {
@@ -17,7 +17,7 @@ void sortDescending(int arr[], int n){
         
     }
     cout << "Merged Sorted array : ";
-    for (int i = 0; i <= n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
     }
@@ -29,22 +29,22 @@ int main() {
     cout << "Enter length of array: ";
     cin >> n;
     int arr1[n], arr2[n], arr3[n+n];
-    for (i = 0; i <= n-1; i++)
+    for (i = 0; i < n; i++)
     {
         cout << "Enter Element of array 1" << i << ":";
         cin >> arr1[i];
     }
-    for (i = 0; i <= n-1; i++)
+    for (i = 0; i < n; i++)
     {
         cout << arr1[i] << " ";
     }
     cout << endl;
-    for (i = 0; i <= n-1; i++)
+    for (i = 0; i < n; i++)
     {
         cout << "Enter Element of array 2" << i << ":";
         cin >> arr2[i];
     }
-    for (i = 0; i <= n-1; i++)
+    for (i = 0; i < n; i++)
     {
         cout << arr2[i] << " ";
     }

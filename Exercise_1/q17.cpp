@@ -3,9 +3,9 @@
 using namespace std;
 
 void scndSmalestElement(int arr[], int n){
-    for (int i = 0; i <= n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j <= n - 1; j++)
+        for (int j = i + 1; j < n; j++)
         {
             if(arr[i] > arr[j])
             {
@@ -27,7 +27,7 @@ int main()
     cout << "Enter length of array: ";
     cin >> n;
     int arr[n];
-    for (i = 0; i <= n - 1; i++)
+    for (i = 0; i < n; i++)
     {
         cout << "Enter Element " << i << ":";
         cin >> arr[i];

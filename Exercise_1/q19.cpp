@@ -11,7 +11,7 @@ void display(int *arr, int n, int m){
         }
         cout << endl;
     }
-}
+} 
 
 int main()
 {
