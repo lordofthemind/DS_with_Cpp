@@ -18,6 +18,7 @@ void arrayCopy(int arr[], int n){
 
 int main() {
     int n;
+    
     cout << "Enter length of array: ";
     cin >> n;
     int arr[n];
@@ -32,6 +33,6 @@ int main() {
     {
         cout << "Element " << i << " is :" << arr[i] << endl;
     }
-    arrayCopy(arr, n);
+    // arrayCopy(arr, n);
     return 0;
 }
