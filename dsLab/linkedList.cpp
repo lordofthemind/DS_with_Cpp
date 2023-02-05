@@ -8,106 +8,258 @@ struct node
 };
 struct node *head;
 
-void beginInsert()
+void traverseList()
 {
-    struct node *ptr;
-    ptr = (struct node *)malloc(sizeof(struct node *));
-
-    int item;
-    if (ptr == NULL)
+    struct node *current;
+    current = head;
+    if (head == NULL)
     {
-        cout << "Overflow" << endl;
+        cout << "List is empty, nothing to print." << endl;
     }
     else
     {
-        cout << "Enter the element :" << endl;
-        cin >> item;
-        ptr->data = item;
-        ptr->next = head;
-        head = ptr;
-        ptr = NULL;
-        free(ptr);
-        cout << "Element inserted!" << endl;
-    }
-}
-
-void display()
-{
-    struct node *ptr;
-    ptr = head;
-
-    if (ptr == NULL)
-    {
-        cout << "No element to print!" << endl;
-    }
-    else
-    {
-        cout << "Element in Linked-list are :" << endl;
-        while (ptr != NULL)
+        cout << "List is as follows..." << endl;
+        while (current != NULL)
         {
-            cout << ptr->data << " ";
-            ptr = ptr->next;
+            cout << current->data << " ";
+            current = current->next;
         }
         cout << endl;
     }
 }
 
-int main()
+void beginInsert()
 {
-    beginInsert();
-    display();
-    return 0;
+    struct node *ptr;
+    int item;
+    ptr = (struct node *)malloc(sizeof(struct node));
+    if (ptr == NULL)
+    {
+        cout << "Memory overflow." << endl;
+    }
+    else
+    {
+        cout << "Enter element: ";
+        cin >> item;
+        ptr->data = item;
+        ptr->next = head;
+        head = ptr;
+        cout << "Element inserted." << endl;
+    }
 }
 
-// #include <iostream>
-// using namespace std;
+void endInsert()
+{
+    struct node *ptr, *trvrs;
+    int item;
+    ptr = (struct node *)malloc(sizeof(struct node));
+    if (ptr == NULL)
+    {
+        cout << "Memory overflow." << endl;
+    }
+    else
+    {
+        cout << "Enter element: ";
+        cin >> item;
+        ptr->data = item;
+        if (head == NULL)
+        {
+            ptr->next = NULL;
+            head = ptr;
+            cout << "Elelment inserted in last." << endl;
+        }
+        else
+        {
+            trvrs = head;
+            while (trvrs->next != NULL)
+            {
+                trvrs = trvrs->next;
+            }
+            trvrs->next = ptr;
+            ptr->next = NULL;
+            cout << "Element inserted in last." << endl;
+        }
+    }
+}
 
-// int main()
-// {
-//     struct node
-//     {
-//         int data;
-//         struct node *next;
-//     };
-//     struct node *head;
-//     struct node *ptr;
+void randInsert()
+{
+    struct node *ptr, *trvrs;
+    int item, i, pos;
+    ptr = (struct node *)malloc(sizeof(struct node));
+    if (ptr == NULL)
+    {
+        cout << "Memory overflow." << endl;
+    }
+    else
+    {
+        cout << "Enter element: ";
+        cin >> item;
+        cout << "Enter the location of element after which you want to insert: ";
+        cin >> pos;
+        trvrs = head;
+        for (i = 0; i < pos; i++)
+        {
+            trvrs = trvrs->next;
+            if (trvrs == NULL)
+            {
+                cout << "Can't insert, location out of bound." << endl;
+                return;
+            }
+            ptr->next = trvrs->next;
+            trvrs->next = ptr;
+            cout << "Element inserted after " << pos << endl;
+        }
+    }
+}
 
-//     ptr = (struct node *)malloc(sizeof(struct node *));
+void beginDelete()
+{
+    struct node *ptr;
+    if (ptr == NULL)
+    {
+        cout << "Memory overflow." << endl;
+    }
+    else
+    {
+        ptr = head;
+        head = ptr->next;
+        free(ptr);
+        cout << "Element Deleted from begining." << endl;
+    }
+}
 
-//     int item;
-//     if (ptr == NULL)
-//     {
-//         cout << "Overflow" << endl;
-//     }
-//     else
-//         {
-//         cout << "Enter the element :"<< endl;
-//         cin >> item;
-//         ptr->data = item;
-//         ptr->next = head;
-//         head = ptr;
-//         //ptr = NULL;
-//         //free(ptr);
-//         cout << "Element inserted!" << endl;
-//         }
+void endDelete()
+{
+    struct node *trvrs, *trvrs_1;
+    if (head == NULL)
+    {
+        cout << "Memory overflow." << endl;
+    }
+    else if (head->next == NULL)
+    {
+        head = NULL;
+        free(head);
+        cout << "Only element in list deleted." << endl;
+    }
+    else
+    {
+        trvrs = head;
+        while (trvrs->next != NULL)
+        {
+            trvrs_1 = trvrs;
+            trvrs = trvrs->next;
+        }
+        trvrs_1->next = NULL;
+        free(trvrs);
+        cout << "Element deleted from last." << endl;
+    }
+}
 
-//     // struct node *ptr;
+void randDelete()
+{
+    struct node *trvrs, *trvrs_1;
+    int pos;
+    cout << "Enter the location of element you want to delete :" << endl;
+    cin >> pos;
+    trvrs = head;
+    for (int i = 0; i < pos - 1; i++)
+    {
+        trvrs_1 = trvrs;
+        trvrs = trvrs->next;
+        if (trvrs == NULL)
+        {
+            cout << "Can't delete! location out of bound!!" << endl;
+            return;
+        }
+    }
+    trvrs_1->next = trvrs->next;
+    free(trvrs);
+    cout << "Element deleted at position " << pos + 1 << endl;
+}
 
-//     if (ptr == NULL)
-//     {
-//         cout << "No element to print!" << endl;
-//     }
-//     else
-//     {
-//         cout << "Element in Linked-list are :"<< endl;
-//        while (ptr!= NULL)
-//       {
-//             cout << "Element in Linked-list are :"<< endl;
-//             cout << ptr->data <<" " << endl;
-//             ptr = ptr->next;
-//        }
+void search()
+{
+    struct node *trvrs;
+    int item, pos = 0, flag = 0;
+    trvrs = head;
+    if (head == NULL)
+    {
+        cout << "List is empty." << endl;
+    }
+    else
+    {
+        cout << "Enter element you are looking for : ";
+        cin >> item;
+        while (trvrs != NULL)
+        {
+            if (trvrs->data == item)
+            {
+                cout << "element found at location " << pos + 1 << endl;
+            }
+            else
+            {
+                flag = 1;
+            }
+            pos++;
+            trvrs = trvrs->next;
+            if (flag == 0)
+            {
+                cout << "item not found!" << endl;
+            }
+        }
+    }
+}
 
-//     }
-
-//     return 0;
-// }
+int main()
+{
+    int ch = 0;
+    while (ch != 9)
+    {
+        cout << "Choose operation to perform on singly linked list: " << endl;
+        cout << "1> Search in list." << endl;
+        cout << "2> Traverse through list." << endl;
+        cout << "3> Insert in ending of list." << endl;
+        cout << "4> Insert in begining of list." << endl;
+        cout << "5> Insert at a position in list." << endl;
+        cout << "6> Delete from ending of list." << endl;
+        cout << "7> Delete from begining of list." << endl;
+        cout << "8> Delete from a position in list." << endl;
+        cout << "9> Exit programm." << endl;
+        cin >> ch;
+        switch (ch)
+        {
+        case 1:
+            search();
+            break;
+        case 2:
+            traverseList();
+            break;
+        case 3:
+            endInsert();
+            break;
+        case 4:
+            beginInsert();
+            break;
+        case 5:
+            randInsert();
+            break;
+        case 6:
+            endDelete();
+            break;
+        case 7:
+            beginDelete();
+            break;
+        case 8:
+            randDelete();
+            break;
+        case 9:
+            exit;
+            break;
+        default:
+            cout << "Enter valid input." << endl;
+            break;
+        }
+    }
+    return 0;
+}

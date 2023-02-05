@@ -20,7 +20,7 @@ void arrayCopy(int arr[], int n){
 void arrayRevCopy(int arr[], int n){
     int carr[n], i, j;
     // for (i = 0, j = n-1; i < n, j = 0; i++, j--)
-    j = n;
+    // j = n;
     for (i = 0, j = n-1; i < n ; i++, j--)
     {
         carr[j] = arr[i];
