@@ -168,11 +168,12 @@ void beginDelete()
     if (head == NULL)
     {
         cout << "Memory underflow." << endl;
-    }else if (head->next == NULL){
+    }
+    else if (head->next == NULL)
+    {
         head = NULL;
         free(head);
         cout << "Only element deleted." << endl;
-
     }
     else
     {
@@ -212,28 +213,38 @@ void endDelete()
 
 void randDelete()
 {
-    struct node *trvrs, *temp;
-    int pos;
+    struct node *trvrs;
+    int pos, cnt = 0;
     cout << "Enter the location of element you want to delete :" << endl;
     cin >> pos;
+    pos--;
     trvrs = head;
-    for (int i = 0; i < pos - 1; i++)
+    while (trvrs != NULL && cnt < pos)
     {
         trvrs = trvrs->next;
-        if (trvrs->next == NULL)
-        {
+        cnt++;
+    }
+    if (trvrs == NULL)
+    {
             cout << "Can't delete! location out of bound!!" << endl;
             return;
-        }
-        else if (trvrs->next->next == NULL)
-        {
-            trvrs->next = NULL;
-        }
     }
-    temp = trvrs->next;
-    trvrs->next = temp->next;
+    if (trvrs == head)
+    {
+        head = head->next;
+        head->prev = NULL;
+    }
+    else if (trvrs->next == NULL)
+    {
+        trvrs->prev->next = NULL;
+    }
+    else
+    {
+        trvrs->prev->next = trvrs->next;
+        trvrs->next->prev = trvrs->prev;
+    }
     free(trvrs);
-    cout << "Element deleted at position " << pos + 1 << endl;
+    cout << "Element deleted at position " << pos << endl;
 }
 
 void search()
@@ -281,10 +292,10 @@ int main()
     traverseList();
     // randInsert();
     // beginDelete();
+    randDelete();
     traverseList();
     traverseListRev();
     // endDelete();
-    // randDelete();
     return 0;
 }
 
