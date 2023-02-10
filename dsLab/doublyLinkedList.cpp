@@ -9,6 +9,11 @@ struct node
 };
 struct node *head;
 
+void line()
+{
+    cout << "+++++++++++++++++++++++++++++++++++" << endl;
+}
+
 void traverseList()
 {
     struct node *current;
@@ -60,7 +65,7 @@ void beginInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
@@ -90,7 +95,7 @@ void endInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
@@ -124,7 +129,7 @@ void randInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
@@ -146,8 +151,8 @@ void randInsert()
         ptr->data = item;
         ptr->next = trvrs->next;
         ptr->prev = trvrs;
-        trvrs->next = ptr;
         trvrs->next->prev = ptr;
+        trvrs->next = ptr;
         cout << "Element inserted after " << pos << endl;
     }
 }
@@ -292,33 +297,51 @@ int main()
         {
         case 1:
             search();
+            traverseList();
+            line();
             break;
         case 2:
             traverseList();
+            line();
             break;
         case 3:
             endInsert();
+            traverseList();
+            line();
             break;
         case 4:
             beginInsert();
+            traverseList();
+            line();
             break;
         case 5:
             randInsert();
+            traverseList();
+            line();
             break;
         case 6:
             endDelete();
+            traverseList();
+            line();
             break;
         case 7:
             beginDelete();
+            traverseList();
+            line();
             break;
         case 8:
             randDelete();
+            traverseList();
+            line();
             break;
         case 9:
             traverseListRev();
+            traverseList();
+            line();
             break;
         case 10:
             exit;
+            line();
             break;
         default:
             cout << "Enter valid input." << endl;

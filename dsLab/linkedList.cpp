@@ -35,7 +35,7 @@ void beginInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
@@ -55,7 +55,7 @@ void endInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
@@ -89,12 +89,13 @@ void randInsert()
     ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else
     {
         cout << "Enter the location of element after which you want to insert: ";
         cin >> pos;
+        pos--;
         trvrs = head;
         for (i = 0; i < pos; i++)
         {
@@ -119,7 +120,7 @@ void beginDelete()
     struct node *ptr;
     if (head == NULL)
     {
-        cout << "Memory underflow." << endl;
+        cout << "Nothing to delete." << endl;
     }
     else
     {
@@ -135,7 +136,7 @@ void endDelete()
     struct node *trvrs, *trvrs_1;
     if (head == NULL)
     {
-        cout << "Memory overflow." << endl;
+        cout << "Memory Full." << endl;
     }
     else if (head->next == NULL)
     {
@@ -232,27 +233,34 @@ int main()
         {
         case 1:
             search();
+            traverseList();
             break;
         case 2:
             traverseList();
             break;
         case 3:
             endInsert();
+            traverseList();
             break;
         case 4:
             beginInsert();
+            traverseList();
             break;
         case 5:
             randInsert();
+            traverseList();
             break;
         case 6:
             endDelete();
+            traverseList();
             break;
         case 7:
             beginDelete();
+            traverseList();
             break;
         case 8:
             randDelete();
+            traverseList();
             break;
         case 9:
             exit;
