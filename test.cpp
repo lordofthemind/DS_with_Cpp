@@ -3,11 +3,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello test" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
-    cout << "Hello Manish" << endl;
+    string nm = "Manish";
+    cout << "Hello " << nm << endl;
     cout << "Hello Manish" << endl;
     return 0;
 }

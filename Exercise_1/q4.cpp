@@ -25,6 +25,7 @@ int main() {
     for (int i = 0; i < n; i++)
     {
         cout << arr2[i] << " ";
+        cout << &arr2[i] << " ";
     }
     cout << endl;
     return 0;

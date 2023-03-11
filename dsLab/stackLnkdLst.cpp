@@ -127,7 +127,7 @@ int main()
     int ch = 0;
     while (ch != 8)
     {
-        cout << "Choose operation to perform on Stack implemented with array! " << endl;
+        cout << "Choose operation to perform on Stack implemented with linked list! " << endl;
         cout << "1> Push element." << endl;
         cout << "2> Pop Element." << endl;
         cout << "3> Is empty??" << endl;
