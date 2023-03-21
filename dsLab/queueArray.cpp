@@ -42,7 +42,7 @@ int deleteq()
 void display()
 {
     cout << "Front=" << frnt << endl;
-    cout << "Rear=" << rear << endl;
+    cout << "Rear=" << rear-1 << endl;
     
     if (isEmpty() == 0)
     {
