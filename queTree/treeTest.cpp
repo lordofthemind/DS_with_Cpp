@@ -8,6 +8,12 @@ struct Node
     Node *left;
     Node *right;
 };
+struct Node
+{
+    int data;
+    Node *next;
+};
+struct Node *head;
 
 // Create a new node with given data and return a pointer to it
 Node *newNode(int data)
