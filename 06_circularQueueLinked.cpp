@@ -38,19 +38,19 @@ int delet()
     struct cLink *temp, *temp1;
     if (head == NULL)
     {
-        printf("\nUNDERFLOW");
+        cout << "\nNO ITEM\n";
         return 0;
     }
     temp = head;
     if (temp->next == head)
     {
-        printf("Popped - %d\n", temp->data);
+        cout << "Popped - " << temp->data << endl;
         head = NULL;
         return 0;
     }
     else
     {
-        printf("Popped - %d\n", temp->data);
+        cout << "Popped - " << temp->data << endl;
         temp1 = temp->next;
         while (temp->next != head)
             temp = temp->next;
